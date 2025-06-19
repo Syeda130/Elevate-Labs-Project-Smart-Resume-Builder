@@ -123,7 +123,7 @@ const removeExperience = (index) => {
       // Ensure suggestions is an array before setting
       if (response.data && Array.isArray(response.data.suggestions)) {
         setSuggestions(response.data.suggestions);
-        setAiExplanation(response.data.explanation || null); // Set explanation
+        setAiExplanation(response.data.criticism || null); // Set criticism as explanation
       } else {
         console.error('AI suggestions response is not in expected format:', response.data);
         setAiError('Received invalid suggestions format from AI.');
@@ -408,6 +408,21 @@ const removeExperience = (index) => {
                 <Sparkles size={19} />
               </button>
             </div>
+            {/* AI criticism box for Project Description */}
+            {(aiExplanation && activeProjectIndex === index) && (
+              <div className="mt-2 p-3 bg-yellow-50 border border-yellow-200 rounded-md">
+                <h4 className="text-sm font-semibold text-yellow-800 mb-2">AI Criticism:</h4>
+                <p className="text-sm text-yellow-700">{aiExplanation}</p>
+                <button
+                  type="button"
+                  onClick={() => { setAiExplanation(null); }}
+                  className="mt-3 text-sm text-gray-500 hover:text-gray-700"
+                >
+                  Clear Criticism
+                </button>
+              </div>
+            )}
+
             {/* AI suggestion box for Project Description */}
             {(isLoading && activeProjectIndex === index) && (
               <div className="text-center mt-2 p-3 bg-gray-50 rounded-md border border-gray-200">
@@ -418,7 +433,6 @@ const removeExperience = (index) => {
             {(suggestions.length > 0 && activeProjectIndex === index) && (
               <div className="mt-2 p-3 bg-blue-50 border border-blue-200 rounded-md">
                 <h4 className="text-sm font-semibold text-blue-800 mb-2">AI Suggestions:</h4>
-                {aiExplanation && <p className="text-sm text-purple-500 mb-2">{aiExplanation}</p>} {/* Display explanation */}
                 <ul className="list-disc list-inside space-y-1 text-sm text-blue-700">
                   {suggestions.map((s, i) => (
                     <li key={i} className="flex justify-between items-center">

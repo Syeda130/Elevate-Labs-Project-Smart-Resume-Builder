@@ -18,7 +18,7 @@ export default {
       red: colors.red,
       green: colors.green,
       yellow: colors.yellow,
-      // Add other color sets if you use them, e.g., 'emerald', 'sky'
+
 
       // **OVERRIDE the problematic colors with safe, non-oklch versions**
       gray: {
@@ -46,7 +46,7 @@ export default {
         600: '#7c3aed',
         700: '#6d28d9',
       },
-      indigo: { // used for focus rings
+      indigo: {
         500: '#6366f1',
       }
     },

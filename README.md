@@ -11,5 +11,11 @@ SMART RESUME BUILDER WITH AI SUGGESTIONS
 
 ![alt text](client/public/Screenshot-two.png)
 
-7. View the Project Reoprt on Smart Resume Builder using AI suggestions to get moe detailed informaton:
+7. Screenshot of how AI Sugestions Look like
+![alt text](client/public/Screenshot-three.png)
+
+8. Exporting Resume as PDF
+![alt text](client/public/Screenshot-four.png)
+
+9. View the Project Reoprt on Smart Resume Builder using AI suggestions to get moe detailed informaton:
 [text](<PROJECT REPORT.pdf>)

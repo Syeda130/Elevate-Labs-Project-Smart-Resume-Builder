@@ -13,7 +13,7 @@ const ResumeForm = ({ resumeData, setResumeData }) => {
   const [aiError, setAiError] = useState(null); // New state for AI suggestion errors
   const [aiExplanation, setAiExplanation] = useState(null); // New state for AI explanation
 
-  // --- GENERIC CHANGE HANDLER ---
+
   // Handles changes for simple fields (like personal info and summary)
   const handleChange = (e, section) => {
     const { name, value } = e.target;
@@ -27,7 +27,6 @@ const ResumeForm = ({ resumeData, setResumeData }) => {
   };
 
   // --- EDUCATION HANDLERS ---
-  // Handles changes for fields within the education list
   const handleEducationChange = (e, index) => {
     const { name, value } = e.target;
     const list = [...resumeData.education];
@@ -57,7 +56,7 @@ const ResumeForm = ({ resumeData, setResumeData }) => {
       if (!resumeData.skills.includes(currentSkill.trim())) {
         setResumeData(prevData => ({ ...prevData, skills: [...prevData.skills, currentSkill.trim()] }));
       }
-      setCurrentSkill(""); // Clear the input
+      setCurrentSkill(""); 
     }
   };
   const removeSkill = (skillToRemove) => {
@@ -150,7 +149,7 @@ const removeExperience = (index) => {
           <input
             type="text"
             name="fullName"
-            className="p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+            className="p-2 border border-gray-300 rounded-md shadow-sm "
             placeholder="Full Name"
             value={resumeData.personalInfo.fullName}
             onChange={(e) => handleChange(e, 'personalInfo')}
@@ -158,7 +157,7 @@ const removeExperience = (index) => {
           <input
             type="email"
             name="email"
-            className="p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+            className="p-2 border border-gray-300 rounded-md shadow-sm "
             placeholder="Email Address"
             value={resumeData.personalInfo.email}
             onChange={(e) => handleChange(e, 'personalInfo')}
@@ -166,7 +165,7 @@ const removeExperience = (index) => {
           <input
             type="tel"
             name="phone"
-            className="p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+            className="p-2 border border-gray-300 rounded-md shadow-sm "
             placeholder="Phone Number"
             value={resumeData.personalInfo.phone}
             onChange={(e) => handleChange(e, 'personalInfo')}
@@ -174,7 +173,7 @@ const removeExperience = (index) => {
           <input
             type="text"
             name="address"
-            className="p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+            className="p-2 border border-gray-300 rounded-md shadow-sm"
             placeholder="City, State"
             value={resumeData.personalInfo.address}
             onChange={(e) => handleChange(e, 'personalInfo')}
@@ -182,7 +181,7 @@ const removeExperience = (index) => {
            <input
             type="text"
             name="linkedin"
-            className="p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+            className="p-2 border border-gray-300 rounded-md shadow-sm"
             placeholder="LinkedIn Profile URL"
             value={resumeData.personalInfo.linkedin}
             onChange={(e) => handleChange(e, 'personalInfo')}
@@ -197,7 +196,7 @@ const removeExperience = (index) => {
           <textarea
             name="summary"
             rows="6"
-            className="block w-full p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+            className="block w-full p-2 border border-gray-300 rounded-md shadow-sm"
             placeholder="A brief overview of your career..."
             value={resumeData.summary}
             onChange={(e) => setResumeData({...resumeData, summary: e.target.value})}
@@ -286,15 +285,15 @@ const removeExperience = (index) => {
           <Trash2 size={19} />
         </button>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" name="jobTitle" className="p-2 border border-gray-300 rounded-md shadow-sm w-75 bg-white" placeholder="Job Title" value={exp.jobTitle} onChange={(e) => handleExperienceChange(e, index)} />
-            <input type="text" name="company" className="p-2 border border-gray-300 rounded-md shadow-sm w-73 bg-white" placeholder="Company" value={exp.company} onChange={(e) => handleExperienceChange(e, index)} />
-            <input type="text" name="location" className="p-2 border border-gray-300 rounded-md shadow-sm w-75 bg-white" placeholder="Location (e.g., Remote)" value={exp.location} onChange={(e) => handleExperienceChange(e, index)} />
+            <input type="text" name="jobTitle" className="p-2 border border-gray-300 rounded-md shadow-sm w-75 " placeholder="Job Title" value={exp.jobTitle} onChange={(e) => handleExperienceChange(e, index)} />
+            <input type="text" name="company" className="p-2 border border-gray-300 rounded-md shadow-sm w-73 " placeholder="Company" value={exp.company} onChange={(e) => handleExperienceChange(e, index)} />
+            <input type="text" name="location" className="p-2 border border-gray-300 rounded-md shadow-sm w-75 " placeholder="Location (e.g., Remote)" value={exp.location} onChange={(e) => handleExperienceChange(e, index)} />
             <div className="grid grid-cols-2 gap-2">
-                <input type="text" name="startDate" className="p-2 border border-gray-300 rounded-md shadow-sm bg-white" placeholder="Start Date" value={exp.startDate} onChange={(e) => handleExperienceChange(e, index)} />
-                <input type="text" name="endDate" className="p-2 border border-gray-300 rounded-md shadow-sm bg-white" placeholder="End Date" value={exp.endDate} onChange={(e) => handleExperienceChange(e, index)} />
+                <input type="text" name="startDate" className="p-2 border border-gray-300 rounded-md shadow-sm " placeholder="Start Date" value={exp.startDate} onChange={(e) => handleExperienceChange(e, index)} />
+                <input type="text" name="endDate" className="p-2 border border-gray-300 rounded-md shadow-sm " placeholder="End Date" value={exp.endDate} onChange={(e) => handleExperienceChange(e, index)} />
             </div>
         </div>
-        <textarea name="description" rows="5" className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-white" placeholder="Describe your responsibilities and achievements..." value={exp.description} onChange={(e) => handleExperienceChange(e, index)} />
+        <textarea name="description" rows="5" className="w-full p-2 border border-gray-300 rounded-md shadow-sm " placeholder="Describe your responsibilities and achievements..." value={exp.description} onChange={(e) => handleExperienceChange(e, index)} />
       </div>
     ))}
     <button type="button" onClick={addExperience} className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium">
@@ -324,7 +323,7 @@ const removeExperience = (index) => {
               <input
                 type="text"
                 name="degree"
-                className="p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+                className="p-2 border border-gray-300 rounded-md shadow-sm w-75 "
                 placeholder="Degree Name / Field of Study"
                 value={edu.degree}
                 onChange={(e) => handleEducationChange(e, index)}
@@ -332,7 +331,7 @@ const removeExperience = (index) => {
               <input
                 type="text"
                 name="school"
-                className="p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+                className="p-2 border border-gray-300 rounded-md shadow-sm w-75 "
                 placeholder="School / University"
                 value={edu.school}
                 onChange={(e) => handleEducationChange(e, index)}
@@ -340,7 +339,7 @@ const removeExperience = (index) => {
               <input
                 type="text"
                 name="gradYear"
-                className="p-2 border border-gray-300 rounded-md shadow-sm w-75 bg-white"
+                className="p-2 border border-gray-300 rounded-md shadow-sm w-75 "
                 placeholder="Graduation Year"
                 value={edu.gradYear}
                 onChange={(e) => handleEducationChange(e, index)}
@@ -384,7 +383,7 @@ const removeExperience = (index) => {
             <input
               type="text"
               name="name"
-              className="p-2 border border-gray-300 rounded-md shadow-sm w-xl bg-white"
+              className="p-2 border border-gray-300 rounded-md shadow-sm w-xl "
               placeholder="Project Name"
               value={proj.name}
               onChange={(e) => handleProjectChange(e, index)}
@@ -393,7 +392,7 @@ const removeExperience = (index) => {
               <textarea
                 name="description"
                 rows="5"
-                className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+                className="w-full p-2 border border-gray-300 rounded-md shadow-sm "
                 placeholder="Project Description"
                 value={proj.description}
                 onChange={(e) => handleProjectChange(e, index)}
@@ -472,7 +471,7 @@ const removeExperience = (index) => {
             <input
               type="text"
               name="link"
-              className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-white"
+              className="w-full p-2 border border-gray-300 rounded-md shadow-sm "
               placeholder="Project Link (optional)"
               value={proj.link}
               onChange={(e) => handleProjectChange(e, index)}
@@ -503,7 +502,7 @@ const removeExperience = (index) => {
           ))}
           <input
             type="text"
-            className="flex-grow p-1 outline-none bg-white"
+            className="flex-grow p-1 outline-none "
             placeholder="Add a skill and press Enter..."
             value={currentSkill}
             onChange={(e) => setCurrentSkill(e.target.value)}

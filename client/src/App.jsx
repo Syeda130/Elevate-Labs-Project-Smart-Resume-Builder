@@ -23,7 +23,7 @@ function App() {
       gradYear: ''
     }
   ],
-  skills: [], // An array to hold skill strings
+  skills: [], 
   projects: [
     {
       name: '',
@@ -48,7 +48,7 @@ const handleExportPDF = () => {
   window.print();
 };
 
-  // --- NEW: handleSaveResume function ---
+  //  handleSaveResume function ---
   const handleSaveResume = async () => {
     try {
       // Send the entire resumeData object to your backend's /api/resume endpoint

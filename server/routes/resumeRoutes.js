@@ -1,13 +1,12 @@
-// server/routes/resumeRoutes.js (NEW VERSION using axios)
 
 const express = require('express');
 const router = express.Router();
-const axios = require('axios'); // Import axios
-const path = require('path'); // Import the path module
+const axios = require('axios'); 
+const path = require('path'); 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') }); // Load environment variables from .env file using absolute path
 
 
-// This is the correct model name for the API.
+
 const LLM_API_KEY = process.env.LLM_API_KEY;
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${LLM_API_KEY}`;
 console.log(GEMINI_URL);
@@ -71,7 +70,7 @@ router.post('/ai/suggest', async (req, res) => {
     };
 
     try {
-        // Make the POST request using axios, just like your curl command
+       
         const response = await axios.post(GEMINI_URL, requestData);
 
         // Extract the AI's response text from the deeply nested structure
